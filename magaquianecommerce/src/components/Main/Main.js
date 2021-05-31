@@ -1,7 +1,7 @@
 import './Main.css';
 import NavBar from '../NavBar/NavBar';
 
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 
@@ -11,9 +11,7 @@ function Main(){
             <header className="App-header">
                 <NavBar/>
             </header>
-            <body>
-                
-            </body>
+           
         </div>
     );
 }

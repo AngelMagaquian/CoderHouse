@@ -5,14 +5,34 @@
     --orange: rgb(255,163,26);
     --orange_hover: rgb(253, 152, 0);
 }
+/*All about navbar conteiner*/
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--primary);
+}
+
+/*All about navbar sections*/
+ul{
+    width: auto;
+    float: right;
+    margin-top: 5px;
+}
+
+li{
+    display: inline-block;
+    padding: 15px 30px;
+}
 
 .navSection{
     display: inline-block;
     background-color: var(--primary);
-    color: white;
+    color: var(--orange);
     padding: 10px 10px;
     text-decoration: none;
-    
+    font-weight: bold;
 }
 
 .navSection:hover{
@@ -21,20 +41,23 @@
     transition: background-color .5s;
 }
 
-.navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 80px;
-    
-    background-color: var(--primary);
 
-}
- .navLogo{
+/*All abaout navbar titles*/
+/*  .navLogo{
     float: left;
     top : 0;
     height: 5%;
     width: 5% ;
-   
+    
+}  */
 
-} 
+.navBrand{
+    color: var(--orange);
+    position: absolute;
+    float: left;
+    margin-left: 2%;
+    margin-top: 5px;
+    pointer-events: none;
+    font-size: x-large;
+}
+
