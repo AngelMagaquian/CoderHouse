@@ -1,0 +1,30 @@
+:root{
+    --primary:  rgb(41,41,41);
+    --secundario: rgb(29,29,29);
+    --teciario: rgb(27,27,27);
+    --orange: rgb(255,163,26);
+    --orange_hover: rgb(253, 152, 0);
+}
+
+.button-cartWidget{
+    width: auto;
+    float: right;
+    /* margin-top: 5px; */
+    background-color: var(--primary);
+    border-style: none;
+    padding-right: 100px;
+    
+}
+
+.button-cartWidget :hover{
+    background-color: var(--orange);
+    transition: background-color .5s;
+    fill:var(--primary);
+}
+
+.bi-cart3{
+    width: 150%;
+    height: 150%;
+    fill: var(--orange);
+}
+

@@ -1,5 +1,6 @@
 import './Main.css';
 import NavBar from '../NavBar/NavBar';
+import cartWidget from '../CartWidget/cartWidget';
 
 
 

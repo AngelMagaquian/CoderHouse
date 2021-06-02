@@ -1,6 +1,7 @@
 import './NavBar.css'; 
 import logo from '../../assets/icons/logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
+import CartWidget  from '../CartWidget/cartWidget';
 
 function NavBar(){
     return(
@@ -19,7 +20,9 @@ function NavBar(){
                 <li><a href="#" className="navSection">About</a></li>
                 <li><a href="#" className="navSection">Contact Us</a></li>
             </ul>
+            <CartWidget />
         </nav>
+        
     );
 }
 
