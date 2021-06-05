@@ -1,0 +1,12 @@
+.ItemList-container{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    background-color: grey;
+}
+
+.ItemList-title{
+    color: balck;
+    font-size: 30px;
+    text-align: center;
+}
