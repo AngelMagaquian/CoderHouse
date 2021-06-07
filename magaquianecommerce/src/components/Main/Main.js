@@ -12,8 +12,12 @@ function Main(){
         <div className="App">
             <header className="App-header">
                 <NavBar/>
-                <ItemListContainer title="Items List"/>
+                
             </header>
+            <body>
+                <ItemListContainer title="Items List"/>
+            </body>
+            
            
         </div>
     );

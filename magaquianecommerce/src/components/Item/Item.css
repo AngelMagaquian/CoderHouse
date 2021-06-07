@@ -1,0 +1,54 @@
+.Item-container{
+    /* display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 28px; */
+    background-color: rgb(50,50,50);
+    color: rgb(255, 255, 255);
+    
+}
+
+
+.card-title{
+    font-size: large;
+    color: rgb(255, 149, 36);
+    text-align: center;
+}
+
+.card-text{
+    font-size: large;
+    color: rgb(255, 149, 36);
+    text-align: left;
+    font-weight: bolder;
+}
+
+.card-control{
+    padding-block: 30px;
+    background-color: rgb(42, 42, 42) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-control >input{
+    height: 40px;
+    width: 80px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    text-align: center;
+    cursor:auto;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+
+.btn{
+    text-align: center !important;
+    height: 40px !important;
+    width: 40px !important;
+    border: none;
+}
+
+.card{
+    background-color:rgb(50,50,50)  !important;
+}
