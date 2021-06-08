@@ -8,8 +8,8 @@ const itemList =[
         image: 'https://www.mayoristastecno.com.ar/wp-content/uploads/2021/04/1000x1000-Fondo-Blanco-68-200x200.jpg',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         price: '200',
-        stock: 0
-    },
+        stock: 10
+    }/* ,
     {
         name: 'Item 2',
         image: 'https://www.casasilvia.com/media/catalog/product/cache/1/small_image/200x200/9df78eab33525d08d6e5fb8d27136e95/1/-/1-mouse-gamer-gm-510.jpg',
@@ -30,7 +30,7 @@ const itemList =[
         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         price: '400',
         stock: 1
-    }
+    } */
 ]
 
 const ItemListContainer = (props) => {

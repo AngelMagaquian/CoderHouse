@@ -6,7 +6,25 @@
     justify-content: center;
 }
 
-.card-control >input{
+
+.add-container{
+    padding-left: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-container > button{
+    height: 50px  !important;
+    width: 100px !important;
+    font-weight: bolder;
+}
+
+
+
+
+.card-control > .btn-container >input{
     height: 40px;
     width: 80px;
     padding-left: 10px !important;
@@ -24,4 +42,9 @@
     height: 40px !important;
     width: 40px !important;
     border: none;
+}
+
+.add{
+    text-align: center;
+    
 }

@@ -1,9 +1,12 @@
-import React , { useState } from 'react'
+import React  from 'react'
 import './Item.css';
 import Count from '../../utils/Count/Count.js';
 
 function Item(props) {
 
+    const onAdd = (amount) => {
+        alert('Compraste: '+amount);
+    }
     return (
             
                 <div className="col-lg-4 col-md-6 col-12 Item-container">
@@ -14,7 +17,8 @@ function Item(props) {
                                 <p className="card-footer">{props.desc}</p>
                                 <p className="card-text">Price: ${props.price}</p>
                                 <p className="card-text">Stock: {props.stock}</p>
-                                <Count/>
+                                <Count stock={10} inital={1} onAdd={onAdd}/>
+                                
                             </div>
                         </div>
                 </div>       
