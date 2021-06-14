@@ -3,7 +3,7 @@ import './Item.css';
 import Count from '../../utils/Count/Count.js';
 
 function Item(props) {
-
+    console.log(props);
     const onAdd = (amount) => {
         alert('Compraste: '+amount);
     }
@@ -17,7 +17,8 @@ function Item(props) {
                                 <p className="card-footer">{props.desc}</p>
                                 <p className="card-text">Price: ${props.price}</p>
                                 <p className="card-text">Stock: {props.stock}</p>
-                                <Count stock={10} inital={1} onAdd={onAdd}/>
+                                <p className="card-text">Id: {props.id}</p>
+                                <Count stock={props.stock} inital={1} onAdd={onAdd}/>
                                 
                             </div>
                         </div>

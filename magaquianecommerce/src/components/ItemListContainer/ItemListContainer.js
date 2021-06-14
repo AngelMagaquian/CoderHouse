@@ -15,24 +15,32 @@ const ItemListContainer = () => {
             image: 'https://www.mayoristastecno.com.ar/wp-content/uploads/2021/04/1000x1000-Fondo-Blanco-68-200x200.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             price: '200',
-            stock: 10
+            stock: 10,
+            id: 1
+        },
+        {
+            name: 'Item 2',
+            image: 'https://www.casasilvia.com/media/catalog/product/cache/1/small_image/200x200/9df78eab33525d08d6e5fb8d27136e95/1/-/1-mouse-gamer-gm-510.jpg',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            price: '300',
+            stock: 5,
+            id: 2
         }
     ];
 
     useEffect(()=>{
         const promise = new Promise ((resolve, reject) =>{
-            resolve(items)
-            console.log('promise '+items)
+            setTimeout(()=>{
+                resolve(items)
+            }, 2000);
+            
         });
-    
         promise.then(data =>{
             if(data){
                 setItem(data);
             }else{
                 throw new Error('error');
             }
-            
-
         }, error =>{
             console.log(error);
         }
