@@ -1,6 +1,7 @@
 import React  from 'react'
 import './Item.css';
 import Count from '../../utils/Count/Count.js';
+import { NavLink } from 'react-router-dom';
 
 function Item(props) {
     const onAdd = (amount) => {
@@ -17,6 +18,12 @@ function Item(props) {
                         <p className="card-text">Stock: {props.stock}</p>
                         <p className="card-text">Id: {props.id}</p>
                         <Count stock={props.stock} inital={1} onAdd={onAdd}/>
+
+                        <br></br>
+                        <NavLink activeClassName="nav-link:hover"  to="/ItemDetail/1"> {/*ponerle id de la props*/}
+                            <button className="btn btn-info">Ver detalle</button>
+                        </NavLink>
+                        
                 </div>
             </div>
         </div>       

@@ -1,9 +1,8 @@
 import './Main.css';
-import NavBar from '../NavBar/NavBar';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
+import NavBar from '../NavBar/NavBar'
 
 
 
@@ -29,10 +28,10 @@ function Main(){
                     <NavBar/>
                 </header> 
                 <Switch>
-                    <Route exact path='/'>    
+                    <Route path='/category/:id'>    
                         <ItemListContainer title="Items List"/>
                     </Route>
-                    <Route path='/ItemDetail'>
+                    <Route path='/ItemDetail/:id'>
                         <ItemDetailContainer/>
                     </Route>
                 </Switch>
