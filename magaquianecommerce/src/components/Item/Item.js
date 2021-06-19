@@ -2,8 +2,12 @@ import React  from 'react'
 import './Item.css';
 import Count from '../../utils/Count/Count.js';
 import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router';
+
 
 function Item(props) {
+    const {id} = useParams();
+    
     const onAdd = (amount) => {
         alert('Compraste: '+amount);
     }
@@ -20,7 +24,7 @@ function Item(props) {
                         <Count stock={props.stock} inital={1} onAdd={onAdd}/>
 
                         <br></br>
-                        <NavLink activeClassName="nav-link:hover"  to="/ItemDetail/1"> {/*ponerle id de la props*/}
+                        <NavLink activeClassName="nav-link:hover"  to={`/ItemDetail/${props.id}`}> {/*ponerle id de la props*/}
                             <button className="btn btn-info">Ver detalle</button>
                         </NavLink>
                         

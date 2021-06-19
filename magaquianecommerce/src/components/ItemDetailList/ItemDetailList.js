@@ -1,13 +1,14 @@
-import React from 'react'
-import './ItemList.css';
-import Item from '../Item/Item';
+import React, { Component } from 'react';
+import { useParams } from 'react-router';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
-function ItemList(props) {
+function ItemDetailList(props) {
+    const {id} = useParams();
     console.log(props);
    return(
             props.data.map((e)=>{
-                if(props.id == e.category){
-                    return <Item 
+                if(props.id == e.id){
+                    return <ItemDetail 
                         id = {e.id}
                         name = {e.name}
                         image ={e.image}
@@ -26,4 +27,5 @@ function ItemList(props) {
 
 
 
-export default ItemList
+export default ItemDetailList
+

@@ -29,8 +29,9 @@ const NavBar2 = () => {
                             <NavLink activeClassName="selected" to={'/category/1'}>
                                 <a className="dropdown-item" href="#">Mouse</a>
                             </NavLink>
-                            
-                            <a className="dropdown-item" href="#">Another action</a>
+                            <NavLink activeClassName="selected" to={'/category/2'}>
+                                <a className="dropdown-item" href="#">Monitor</a>
+                            </NavLink>
                         <div className="dropdown-divider"></div>
                             <a className="dropdown-item" href="#">Something else here</a>
                         </div>

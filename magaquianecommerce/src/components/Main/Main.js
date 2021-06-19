@@ -25,7 +25,10 @@ function Main(){
         <div className="App">
             <BrowserRouter>
                 <header className="App-header">
-                    <NavBar/>
+                    
+                    <Route exact to ='/'>    
+                        <NavBar/>
+                    </Route>
                 </header> 
                 <Switch>
                     <Route path='/category/:id'>    
