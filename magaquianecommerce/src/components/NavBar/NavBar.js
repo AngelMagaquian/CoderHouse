@@ -7,7 +7,7 @@ const NavBar2 = () => {
 
             <nav className="navbar navbar-expand-lg ">
                 
-                <NavLink activeClassName="nav-link:hover" exact to="/">
+                <NavLink activeClassName="nav-link:hover" exact to="/t">
                     <a className="navbar-brand" href="#">Angel Magaquian E-Commerce</a>
                 </NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

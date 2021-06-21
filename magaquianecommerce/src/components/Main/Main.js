@@ -25,17 +25,23 @@ function Main(){
         <div className="App">
             <BrowserRouter>
                 <header className="App-header">
-                    
-                    <Route exact to ='/'>    
-                        <NavBar/>
+                    <NavBar/>
+                    <Route path='/:id'>    
+                        <ItemListContainer title="Items List"/>
                     </Route>
                 </header> 
                 <Switch>
                     <Route path='/category/:id'>    
                         <ItemListContainer title="Items List"/>
                     </Route>
+                    
                     <Route path='/ItemDetail/:id'>
                         <ItemDetailContainer/>
+                    </Route>
+                </Switch>
+                <Switch>
+                    <Route path='/'>    
+                        <ItemListContainer title="Items List"/>
                     </Route>
                 </Switch>
             </BrowserRouter>

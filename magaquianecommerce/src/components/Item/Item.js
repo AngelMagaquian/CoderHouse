@@ -24,8 +24,8 @@ function Item(props) {
                         <Count stock={props.stock} inital={1} onAdd={onAdd}/>
 
                         <br></br>
-                        <NavLink activeClassName="nav-link:hover"  to={`/ItemDetail/${props.id}`}> {/*ponerle id de la props*/}
-                            <button className="btn btn-info">Ver detalle</button>
+                        <NavLink activeClassName="nav-link:hover"  to={`/ItemDetail/${props.id}`}> 
+                            <button className="btn-lg btn-info">Ver detalle</button>
                         </NavLink>
                         
                 </div>

@@ -15,6 +15,7 @@ function ItemDetail(props) {
                     <p className="card-text">Price: ${props.price}</p>
                     <p className="card-text">Stock: {props.stock}</p> 
                     <p className="card-text">Id: {props.id}</p> 
+                
                 </div>
             </div>
         </div>
