@@ -1,7 +1,7 @@
 import React , { useState } from 'react'
 import './Count.css';
 
-function Count({stock, inital, onAdd}) {
+function Count({stock, inital, onAdd, btnState}) {
     const [contador, setContador] = useState(inital);
   
     const countAdd = () =>{
@@ -26,7 +26,7 @@ function Count({stock, inital, onAdd}) {
             
            
             <div className="add-container">
-                {contador >= 1 && <button className="btn btn-warning" onClick={() =>onAdd(contador)}>Add {contador}</button>}
+                {contador >= 1 && <button className="btn btn-warning" onClick={() =>onAdd(contador)} disabled= {btnState}>Add {contador}</button>}
             </div> 
             
         </div>

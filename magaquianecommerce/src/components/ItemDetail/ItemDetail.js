@@ -3,14 +3,18 @@ import { useParams } from 'react-router-dom';
 import Count from '../../utils/Count/Count.js';
 function ItemDetail(props) {
     const [product, setProduct] = useState(0);
-    
+    const [btnBuy, setBtn] = useState(false);
+    const [btnCount, setCount] = useState(false);
+
+    console.log(btnCount);
+
     const onAdd = (amount) => {
         setProduct(amount);
+        setBtn(true);
+        setCount(true);
     }
 
-    const upPrince = (amount) =>{
-        return amount * props.price
-    }
+ 
 
     const { id }=useParams();
     return (
@@ -25,9 +29,10 @@ function ItemDetail(props) {
                     <p className="card-text">Stock: {props.stock}</p> 
                     <p className="card-text">Id: {props.id}</p> 
                     
-                    <Count stock={props.stock} inital={0} onAdd={onAdd}/>
-
-                    {product >= 1 ? (<p className="card-footer">Total: ${upPrince(product)}</p>) : (<p className="card-footer">Total: ${0} </p>)}
+                    <Count stock={props.stock} inital={0} onAdd={onAdd} btnState={btnCount}/>
+                    {btnBuy === true && <button className="btn-lg btn-primary center">Buy!</button>}
+               
+                  
 
                    
                 </div>
