@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
-
+import Count from '../../utils/Count/Count.js';
 function ItemDetail(props) {
+    const [product, setProduct] = useState(0);
+    
+    const onAdd = (amount) => {
+        setProduct(amount);
+    }
+
+    const upPrince = (amount) =>{
+        return amount * props.price
+    }
 
     const { id }=useParams();
     return (
@@ -15,7 +24,12 @@ function ItemDetail(props) {
                     <p className="card-text">Price: ${props.price}</p>
                     <p className="card-text">Stock: {props.stock}</p> 
                     <p className="card-text">Id: {props.id}</p> 
-                
+                    
+                    <Count stock={props.stock} inital={0} onAdd={onAdd}/>
+
+                    {product >= 1 ? (<p className="card-footer">Total: ${upPrince(product)}</p>) : (<p className="card-footer">Total: ${0} </p>)}
+
+                   
                 </div>
             </div>
         </div>

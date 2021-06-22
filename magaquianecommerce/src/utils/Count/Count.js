@@ -12,6 +12,8 @@ function Count({stock, inital, onAdd}) {
         contador > inital ? setContador(contador-1) : alert('Minimo de stock')
     }
 
+ 
+
     return (
        
         <div className="card-control">
@@ -24,7 +26,7 @@ function Count({stock, inital, onAdd}) {
             
            
             <div className="add-container">
-                <button className="btn btn-warning" onClick={() =>onAdd(contador)}>Add</button>
+                {contador >= 1 && <button className="btn btn-warning" onClick={() =>onAdd(contador)}>Add {contador}</button>}
             </div> 
             
         </div>
