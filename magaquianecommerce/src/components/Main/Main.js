@@ -4,14 +4,14 @@ import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import cartContext from '../../context/cartContext';
-import cacheProvider from '../../providers/cacheProvider';
+import CacheProvider from '../../providers/cacheProvider';
 
 
 
 function Main(){
   
     return(
-        <cacheProvider>
+        <CacheProvider>
             <div className="App">
                 <BrowserRouter>
                     <header className="App-header">
@@ -36,7 +36,7 @@ function Main(){
                     </Switch>
                 </BrowserRouter>
             </div>
-        </cacheProvider>
+        </CacheProvider>
   
         
         

@@ -3,6 +3,7 @@ import cartContext from '../context/cartContext';
 
 export default function CacheProvider({ defaultValue = [], children }) {
     const [cache, setCache] = useState(defaultValue);
+    
   
     function getFromCache(id) {
       return cache.find(x => x.id === id);
@@ -13,12 +14,15 @@ export default function CacheProvider({ defaultValue = [], children }) {
     }
   
     function addToCache(obj) {
+        //Esta funcion agrega un producto pero antes verifica que no exista
       if (isInCache(obj)) {
         console.log('Element already in cache store.');
         return;
       }
       setCache([...cache, obj]);
       console.log('Elemento agregado!');
+      console.log(obj);
+      alert('Se agrego ' + obj.name);
     }
     return (
       <cartContext.Provider

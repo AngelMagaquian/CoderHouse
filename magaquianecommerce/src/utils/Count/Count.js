@@ -12,6 +12,10 @@ function Count({stock, inital, onAdd, btnState}) {
         contador > inital ? setContador(contador-1) : alert('Minimo de stock')
     }
 
+    const getCount =() =>{
+        return contador;
+    }
+
  
 
     return (
@@ -20,7 +24,7 @@ function Count({stock, inital, onAdd, btnState}) {
             <div className="btn-container">
                 
                 <button  className="btn btn-success btn-block" onClick={() => countAdd()}>+</button>
-                <input className="Item-count" readOnly disabled value={contador}></input>
+                <input className="Item-count" id="count" readOnly disabled value={contador}></input>
                 <button  className="btn btn-danger btn-block" onClick={() => countRest()}>-</button>
             </div>
             

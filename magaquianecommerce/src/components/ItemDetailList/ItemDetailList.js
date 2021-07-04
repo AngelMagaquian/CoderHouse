@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { useParams } from 'react-router';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
+
 function ItemDetailList(props) {
     const {id} = useParams();
     console.log(props);

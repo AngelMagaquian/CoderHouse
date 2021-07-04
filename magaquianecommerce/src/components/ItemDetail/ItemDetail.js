@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useContext, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Count from '../../utils/Count/Count.js';
 import cartContext from '../../context/cartContext.js';
@@ -6,6 +6,7 @@ function ItemDetail(props) {
     const [product, setProduct] = useState(0);
     const [btnBuy, setBtn] = useState(false);
     const [btnCount, setCount] = useState(false);
+
     const { addToCache } = useContext(cartContext);
 
     console.log(btnCount);
@@ -32,7 +33,7 @@ function ItemDetail(props) {
                     <p className="card-text">Id: {props.id}</p> 
                     
                     <Count stock={props.stock} inital={0} onAdd={onAdd} btnState={btnCount}/>
-                    {btnBuy === true && <button className="btn-lg btn-primary center" onClick={() => addToCache({ id: props.id, name: props.name })}>Buy!</button>}
+                    {btnBuy === true && <button className="btn-lg btn-primary center" onClick={() => addToCache({ id: props.id, name: props.name, price: props.price, cant: product })}>Buy!</button>}
                
                   
 
