@@ -1,6 +1,7 @@
 import './Main.css';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import Cart from '../Cart/Cart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import cartContext from '../../context/cartContext';
@@ -32,6 +33,12 @@ function Main(){
                     <Switch>
                         <Route path='/'>    
                             <ItemListContainer title="Items List"/>
+                        </Route>
+                    </Switch>
+
+                    <Switch>
+                        <Route path='/Cart/'>    
+                            <Cart title="Cart"/>
                         </Route>
                     </Switch>
                 </BrowserRouter>

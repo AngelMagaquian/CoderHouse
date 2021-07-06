@@ -4,6 +4,9 @@ import cartContext from '../context/cartContext';
 export default function CacheProvider({ defaultValue = [], children }) {
     const [cache, setCache] = useState(defaultValue);
     
+    function getCache(){
+      return cache;
+    }
   
     function getFromCache(id) {
       return cache.find(x => x.id === id);
@@ -26,7 +29,7 @@ export default function CacheProvider({ defaultValue = [], children }) {
     }
     return (
       <cartContext.Provider
-        value={{ cache, addToCache, isInCache, cacheSize: cache.length }}
+        value={{ cache, addToCache, isInCache, getCache, cacheSize: cache.length }}
       >
         {children}
       </cartContext.Provider>

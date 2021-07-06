@@ -32,12 +32,17 @@ const NavBar2 = () => {
                             <NavLink activeClassName="selected" to={'/category/2'}>
                                 <a className="dropdown-item" href="#">Monitor</a>
                             </NavLink>
+
+                            
                         <div className="dropdown-divider"></div>
                             <a className="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link disabled" href="#">Disabled</a>
+                        
+                        <NavLink  activeClassName="selected" to={'/Cart/'}>
+                            <a className="nav-link disabled" href="#">Cart</a>
+                        </NavLink>
                     </li>
                     </ul>
                 </div>
