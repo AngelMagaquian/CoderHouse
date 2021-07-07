@@ -19,18 +19,7 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                {/* <th scope="row">1</th>
-                                <td>Mouse LG</td>
-                                <td>Mouse Gamer</td>
-                                <td>$12</td>
-                                <td>2</td>
-                                <td>$24</td>
-                                <td><button className="btn btn-danger" value="X" ></button></td> */}
-
-                                <CartItem/>
-
-                            </tr>
+                            <CartItem/>
                         </tbody>
                     </table>
 

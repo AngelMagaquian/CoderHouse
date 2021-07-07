@@ -3,7 +3,7 @@ import cartContext from '../../context/cartContext.js';
 import CartDetail from '../CartDetail/CartDetail.js';
 
 function CartItem() {
-    const [Items, setItems] = useState(0);
+    const [Items, setItems] = useState([]);
     const { getCache } = useContext(cartContext);
 
     useEffect(()=>{
@@ -25,16 +25,16 @@ function CartItem() {
     }, []);
 
 
-    console.log(Items);
     return (
-        <div>
+      
+        <tr>
             {
-                /* Items.map(item=>{
-                   // <CartDetail id={item.id} name={item.name} desc={item.desc} cant={item.cant} price={item.price}/>
-                }) */
+                Items.map(item=>{
+                    return <CartDetail props={item}/>
+                })
             }
-            
-        </div>
+        </tr>
+      
     )
 }
 
