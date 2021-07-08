@@ -27,13 +27,13 @@ function CartItem() {
 
     return (
       
-        <tr>
+        <>
             {
                 Items.map(item=>{
                     return <CartDetail props={item}/>
                 })
             }
-        </tr>
+        </>
       
     )
 }

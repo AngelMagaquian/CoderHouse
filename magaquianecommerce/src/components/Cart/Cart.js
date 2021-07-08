@@ -1,7 +1,10 @@
 import React from 'react';
 import CartItem from '../CartItem/CartItem';
 
+
 const Cart = () => {
+
+
     return (
         <div className="col-12">
             <div className="row">
@@ -11,7 +14,6 @@ const Cart = () => {
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Description</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Total</th>
@@ -20,10 +22,11 @@ const Cart = () => {
                         </thead>
                         <tbody>
                             <CartItem/>
+                            
                         </tbody>
                     </table>
 
-                    <button type="button "className="btn btn-danger" value="Vaciar carrito"></button>
+                    <button type="button "className="btn btn-danger">Vaciar carrito</button>
                 </div>
             </div>
         </div>

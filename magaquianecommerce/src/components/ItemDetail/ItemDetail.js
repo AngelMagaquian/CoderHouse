@@ -1,4 +1,4 @@
-import React, {useContext, useState } from 'react'
+import React, {useContext, useState} from 'react'
 import { useParams } from 'react-router-dom';
 import Count from '../../utils/Count/Count.js';
 import cartContext from '../../context/cartContext.js';

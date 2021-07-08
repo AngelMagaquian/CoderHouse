@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import cartContext from '../context/cartContext';
 
 export default function CacheProvider({ defaultValue = [], children }) {
@@ -6,6 +6,38 @@ export default function CacheProvider({ defaultValue = [], children }) {
     
     function getCache(){
       return cache;
+    }
+
+    function delete_item(id){
+      
+      console.log('delete');
+      console.log('to delete: ' + id);
+      
+      
+      console.log(cache); //cache origianl
+      /* useEffect(()=>{
+        const promise = new Promise ((resolve, reject) =>{
+            resolve(id)
+        });
+        promise.then(data =>{
+            if(data){
+              const newCache = cache.find(x => x.id != id);
+              setCache([newCache]);
+            }else{
+                throw new Error('error');
+            }
+        }, error =>{
+            console.log(error);
+        }
+        ).catch(error =>{
+            alert('NO HAY ITEMS' +error);
+        })
+      }, []); */
+
+      const newCache = cache.filter(x => x.id != id);
+      setCache(newCache);
+    
+      console.log(cache); //cache despues del find
     }
   
     function getFromCache(id) {
@@ -29,7 +61,7 @@ export default function CacheProvider({ defaultValue = [], children }) {
     }
     return (
       <cartContext.Provider
-        value={{ cache, addToCache, isInCache, getCache, cacheSize: cache.length }}
+        value={{ cache, addToCache, isInCache, getCache, delete_item ,cacheSize: cache.length }}
       >
         {children}
       </cartContext.Provider>
