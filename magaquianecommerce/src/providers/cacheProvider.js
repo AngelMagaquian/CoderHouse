@@ -4,42 +4,13 @@ import cartContext from '../context/cartContext';
 export default function CacheProvider({ defaultValue = [], children }) {
     const [cache, setCache] = useState(defaultValue);
     
-    function getCache(){
-      return cache;
-    }
 
-    function delete_item(id){
-      
-      console.log('delete');
-      console.log('to delete: ' + id);
-      
-      
-      console.log(cache); //cache origianl
-      /* useEffect(()=>{
-        const promise = new Promise ((resolve, reject) =>{
-            resolve(id)
-        });
-        promise.then(data =>{
-            if(data){
-              const newCache = cache.find(x => x.id != id);
-              setCache([newCache]);
-            }else{
-                throw new Error('error');
-            }
-        }, error =>{
-            console.log(error);
-        }
-        ).catch(error =>{
-            alert('NO HAY ITEMS' +error);
-        })
-      }, []); */
-
-      const newCache = cache.filter(x => x.id != id);
-      setCache(newCache);
+    function delete_cache(){
+        
+      setCache([]);
+      console.log(cache);
+  }
     
-      console.log(cache); //cache despues del find
-    }
-  
     function getFromCache(id) {
       return cache.find(x => x.id === id);
     }
@@ -52,16 +23,17 @@ export default function CacheProvider({ defaultValue = [], children }) {
         //Esta funcion agrega un producto pero antes verifica que no exista
       if (isInCache(obj)) {
         console.log('Element already in cache store.');
-        return;
+        //si existe tengo que sumar a cant
+      }else{
+        setCache([...cache, obj]);
+        console.log('Elemento agregado!');
+        console.log(obj);
+        alert('Se agrego ' + obj.name);
       }
-      setCache([...cache, obj]);
-      console.log('Elemento agregado!');
-      console.log(obj);
-      alert('Se agrego ' + obj.name);
     }
     return (
       <cartContext.Provider
-        value={{ cache, addToCache, isInCache, getCache, delete_item ,cacheSize: cache.length }}
+        value={{ cache, addToCache, isInCache ,delete_cache ,cacheSize: cache.length }}
       >
         {children}
       </cartContext.Provider>
