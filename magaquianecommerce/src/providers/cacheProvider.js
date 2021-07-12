@@ -6,10 +6,17 @@ export default function CacheProvider({ defaultValue = [], children }) {
     
 
     function delete_cache(){
-        
       setCache([]);
       console.log(cache);
-  }
+    }
+
+    function delete_item(id){
+      console.log('delete item');
+      const newCache = cache.filter(x => x.id != id);
+      
+      setCache(newCache);
+      console.log(cache);
+    } 
     
     function getFromCache(id) {
       return cache.find(x => x.id === id);
@@ -33,7 +40,7 @@ export default function CacheProvider({ defaultValue = [], children }) {
     }
     return (
       <cartContext.Provider
-        value={{ cache, addToCache, isInCache ,delete_cache ,cacheSize: cache.length }}
+        value={{ cache, addToCache, isInCache ,delete_cache , delete_item,cacheSize: cache.length }}
       >
         {children}
       </cartContext.Provider>

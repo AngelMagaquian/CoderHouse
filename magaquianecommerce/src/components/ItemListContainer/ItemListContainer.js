@@ -2,8 +2,9 @@ import './ItemListContainer.css';
 import React, { useState, useEffect } from 'react';
 //import Item from '../Item/Item';
 import ItemList from '../ItemList/ItemList';
-import {products} from '../../utils/Products/Products'; 
+
 import { useParams } from 'react-router';
+import { getFirestore } from '../../conector/index.js';
 
 
 
@@ -11,31 +12,29 @@ const ItemListContainer = () => {
     const {id} = useParams();
 
     const [ItemState, setItem] = useState([]);
-   
 
-    useEffect(()=>{
-        const promise = new Promise ((resolve, reject) =>{
-            setTimeout(()=>{
-                resolve(products)
-            }, 2000);
-            
-        });
-        promise.then(data =>{
-            if(data){
-                setItem(data);
-            }else{
-                throw new Error('error');
+    useEffect(() => {
+        const db = getFirestore();
+        const itemCollection = db.collection('ItemList');
+        itemCollection
+          .get()
+          .then(querySnapshot => {
+            if (querySnapshot.size === 0) {
+              console.log('no results');
+              
+              return;
             }
-        }, error =>{
+            setItem(querySnapshot.docs.map(doc => doc.data()));
+           
+          })
+          .catch(error => {
             console.log(error);
-        }
-        ).catch(error =>{
-            alert('NO HAY STOCK' +error);
-        })
+          
+          });
     }, []);
-    
 
-    
+      console.log(ItemState);
+   
     
     return (
         <div className="ItemList-container container">

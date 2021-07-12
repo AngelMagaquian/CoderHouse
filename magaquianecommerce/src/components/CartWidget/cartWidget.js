@@ -25,7 +25,16 @@ function CartWidget(){
         ).catch(error =>{
             alert('NO HAY ITEMS' +error);
         })
-    }, []); */
+    }, []); 
+    
+    
+    
+    
+    
+    
+    
+    
+    */
 
     
 

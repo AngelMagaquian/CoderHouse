@@ -1,40 +1,11 @@
-import React  ,{ useContext, useState, useEffect } from 'react';
+import React  ,{ useContext } from 'react';
 import cartContext from '../../context/cartContext.js';
 
 
 
 const Cart = () => {
-    const [Items, setItems] = useState([]);
-    const {cache,delete_cache } = useContext(cartContext);
 
-    
-
-    useEffect(()=>{
-        const promise = new Promise ((resolve, reject) =>{
-            resolve(cache)
-        });
-        promise.then(data =>{
-            if(data){
-                setItems(data);
-            }else{
-                throw new Error('error');
-            }
-        }, error =>{
-            console.log(error);
-        }
-        ).catch(error =>{
-            alert('NO HAY ITEMS' +error);
-        })
-    }, []);
-
-    function delete_item(id){
-        console.log('delete item');
-        const newCache = Items.filter(x => x.id != id);
-        setItems(newCache);
-    } 
-
-    
-
+    const {cache,delete_cache, delete_item} = useContext(cartContext);
     return (
         <div className="col-12">
             <div className="row">
@@ -51,7 +22,7 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Items.map(item => (
+                            {cache.map(item => (
                                 <tr>
                                     <td>{item.id}</td>
                                     <td>{item.name}</td>

@@ -9,7 +9,7 @@ function ItemDetail(props) {
 
     const { addToCache } = useContext(cartContext);
 
-    console.log(btnCount);
+    console.log(props);
 
     const onAdd = (amount) => {
         setProduct(amount);
