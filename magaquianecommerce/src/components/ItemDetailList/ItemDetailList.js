@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 
-function ItemDetailList(props) {
-
-    console.log(props);
+function ItemDetailList({data}) {
+    console.log('la prop');
+    console.log(data);
    return(
               
         <ItemDetail 
-            id = {props.id}
-            name = {props.name}
-            image ={props.image}
-            desc ={props.desc}
-            price ={props.price}
-            stock ={props.stock} />
+            id = {data.id}
+            name = {data.name}
+            image ={data.image}
+            desc ={data.desc}
+            price ={data.price}
+            stock ={data.stock} />
    )
             
 }

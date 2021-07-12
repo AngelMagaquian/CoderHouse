@@ -28,8 +28,8 @@ function ItemDetailContainer() {
               
               return;
             }
-            setItem(querySnapshot.docs.map(doc => doc.data()));
-            console.log(querySnapshot);
+            /* setItem(querySnapshot.docs.map(doc => doc.data())); */
+            setItem({id: querySnapshot.id, ...querySnapshot.data()})
            
           })
           .catch(error => {

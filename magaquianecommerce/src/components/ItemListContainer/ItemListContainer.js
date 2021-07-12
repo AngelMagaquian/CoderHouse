@@ -24,7 +24,8 @@ const ItemListContainer = () => {
               
               return;
             }
-            setItem(querySnapshot.docs.map(doc => doc.data()));
+            /* setItem(querySnapshot.docs.map(doc => doc.data())); */
+            setItem(querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id})));
            
           })
           .catch(error => {
