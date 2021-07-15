@@ -6,7 +6,7 @@ function ItemList(props) {
     console.log(props);
    return(
             props.data.map((e)=>{
-                if(props.id == 't'){
+                if(props.id == 'products'){
                     return <Item 
                         id = {e.id}
                         name = {e.name}

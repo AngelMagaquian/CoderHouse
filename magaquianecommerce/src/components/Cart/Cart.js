@@ -1,7 +1,7 @@
 import React  ,{ useContext, useState} from 'react';
 import cartContext from '../../context/cartContext.js';
 import { getFirestore } from '../../conector/index.js';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase';
 
 
 
@@ -10,6 +10,13 @@ const Cart = () => {
 
     const {cache,delete_cache, delete_item} = useContext(cartContext);
 
+    const getTotal =() =>{
+        let sum = 0;
+        cache.map(item =>{
+            sum += item.price * item.cant;
+        });
+        return sum;
+    }
 
     const saveOrder =() =>{
       
@@ -24,12 +31,13 @@ const Cart = () => {
             items: cache,
             date: firebase.firestore.Timestamp.fromDate(new Date()),
             
-            total: 1000
+            total: getTotal()
 
         }
 
         order.add(newOrder).then(({id}) =>{
-            alert('id');
+            alert('Order: '+id);
+            delete_cache();
         })
        
     }

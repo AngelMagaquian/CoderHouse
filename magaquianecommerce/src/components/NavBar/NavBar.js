@@ -8,7 +8,7 @@ const NavBar2 = () => {
 
             <nav className="navbar navbar-expand-lg ">
                 
-                <NavLink activeClassName="nav-link:hover" exact to="/t">
+                <NavLink activeClassName="nav-link:hover" exact to="/products">
                     <a className="navbar-brand" href="#">Angel Magaquian E-Commerce</a>
                 </NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,12 +39,14 @@ const NavBar2 = () => {
                             <a className="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li className="nav-item">
-                        
-                        <NavLink  activeClassName="selected" to={'/Cart/'}>
-                            <a className="nav-link disabled" href="#">Cart</a>
-                        </NavLink>
-                    </li>
+                
+                    <NavLink activeClassName="nav-link:hover" exact to="/products">
+                        <li class="nav-item">
+                            <a class="nav-link">Products</a>
+                        </li>
+                    </NavLink>
+                 
+                  
                     </ul>
                     <CartWidget/>
                 </div>

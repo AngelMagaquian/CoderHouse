@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import { useParams } from 'react-router-dom';
 import Count from '../../utils/Count/Count.js';
 import cartContext from '../../context/cartContext.js';
+import { NavLink } from 'react-router-dom';
 function ItemDetail(props) {
     const [product, setProduct] = useState(0);
     const [btnBuy, setBtn] = useState(false);
@@ -33,7 +34,10 @@ function ItemDetail(props) {
                     <p className="card-text">Id: {props.id}</p> 
                     
                     <Count stock={props.stock} inital={0} onAdd={onAdd} btnState={btnCount}/>
-                    {btnBuy === true && <button className="btn-lg btn-primary center" onClick={() => addToCache({ id: props.id, name: props.name, price: props.price, cant: product })}>Buy!</button>}
+                    {btnBuy === true && 
+                     <NavLink  activeClassName="selected" to={'/Cart/'}>
+                    <button className="btn-lg btn-primary center" onClick={() => addToCache({ id: props.id, name: props.name, price: props.price, cant: product })}>
+                    Buy!</button></NavLink>}
                
                   
 
