@@ -31,6 +31,11 @@ export default function CacheProvider({ defaultValue = [], children }) {
       if (isInCache(obj)) {
         console.log('Element already in cache store.');
         //si existe tengo que sumar a cant
+        cache.map(item =>{
+          if(item.id === obj.id){
+            item.cant += obj.cant;
+          }
+        })
       }else{
         setCache([...cache, obj]);
         console.log('Elemento agregado!');
