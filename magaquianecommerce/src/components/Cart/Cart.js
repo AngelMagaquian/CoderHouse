@@ -1,4 +1,4 @@
-import React  ,{ useContext, useState} from 'react';
+import React  ,{ useContext, useState, useEffect} from 'react';
 import cartContext from '../../context/cartContext.js';
 import { getFirestore } from '../../conector/index.js';
 import firebase from 'firebase';
@@ -9,7 +9,7 @@ import firebase from 'firebase';
 const Cart = () => {
 
     const {cache,delete_cache, delete_item} = useContext(cartContext);
-
+    const [btnSubmit, setBtnSubmit] = useState(true);
     const getTotal =() =>{
         let sum = 0;
         cache.map(item =>{
@@ -18,6 +18,15 @@ const Cart = () => {
         return sum;
     }
 
+    useEffect(() => {
+        console.log('el cahche:...');
+        console.log(cache)
+        if(cache.length == 0){
+            setBtnSubmit(true);
+        }else{
+            setBtnSubmit(false);
+        }
+    }, []);
     const saveOrder =() =>{
       
         const db = getFirestore();
@@ -73,7 +82,7 @@ const Cart = () => {
                         </table>
 
                         <button type="button" className="btn-lg btn-danger" onClick={() =>delete_cache()}>Vaciar carrito</button>
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+                        <button type="button" className="btn-lg btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Next</button>
                         
                     </div>
                 </div>
@@ -83,32 +92,37 @@ const Cart = () => {
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
                         <div className="modal-title">Personal Information</div>
-                        <form>
+                        <div className="row">
+                            <div className="col-6">
+                                
+                                    <div className="col-12">
+                                        <div className="form-group">
+                                            <label for="email">Email address</label>
+                                            <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"/>
+                                            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        </div>
+                                         
+                                    <div class="form-group">
+                                        <label for="userName">Name &#38; lastname</label>
+                                        <input type="text" className="form-control" id="userName" placeholder="Name and last name" /* autoComplete="off" */ />
+                                    </div>
 
-                            <div className="form-group">
-                                <label for="email">Email address</label>
-                                <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"/>
-                                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <div className="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="text" class="form-control" id="phone"  placeholder="Phone"/>
+                                    </div>
+                                    </div>
+                                   
+                                
+                       
+                            <div className="col-12">
+                                <button type="submit" className="btn-lg btn-primary" disabled={btnSubmit} onClick={() =>saveOrder()}>Submit</button>
                             </div>
-                            <div class="form-group">
-                                <label for="userName">Name &#38; lastname</label>
-                                <input type="text" className="form-control" id="userName" placeholder="Name and last name" /* autoComplete="off" */ />
                             </div>
-
-                            <div className="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone"  placeholder="Phone"/>
-                            </div>
-                            <div className="form-check">
-                                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                                <label className="form-check-label" for="exampleCheck1">Terms &#38; Conditions</label>
-                            </div>
-
                            
-                           
-
-                        </form>
-                        <button type="submit" className="btn btn-lg btn-primary" onClick={() =>saveOrder()}>Submit</button>
+                        </div>
+                        
+                        
                         
                    
                     </div>

@@ -1,8 +1,9 @@
-import React, { useContext, useState, useEffect} from 'react';
+import React, { useState} from 'react';
 import cartContext from '../context/cartContext';
 
 export default function CacheProvider({ defaultValue = [], children }) {
     const [cache, setCache] = useState(defaultValue);
+   
     
 
     function delete_cache(){
