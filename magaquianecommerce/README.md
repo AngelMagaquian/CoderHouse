@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Magaquian E-Commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto construido con Create React App.
 
-## Available Scripts
+## `Get Started`:
 
-In the project directory, you can run:
+Este proyecto esta desarrollado con React, por lo que es necesario configurar el entorno:
 
-### `npm start`
+-Instalar y configurar `node` haciendo [Click Aquí](https://nodejs.org/en/). Se peude verificar la instalación con el comando `npm -v` en el CLI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-Una vez instalado node, podemos clonar del repositorio el proyecto y abrirlo en nuestro editor de codigo.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-Ejecutar en CLI el comando `npm install`.
 
-### `npm test`
+-Para poder ejecutar la aplicación en modo desarrollo, escribir en el `CLI`  el comando `npm start`, la app se abrira en el browser en  [http://localhost:3000](http://localhost:3000).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-La pagina se actualizara si se guarda algún cambio. Tambien podrás ver cada linea de error en la consola.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## `Sobre el proyecto`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+>Magaquian E-commerce es un proyecto de desarrollo donde se empleó mayor mente `Java Script` (`React` y `JSX`), `Bootstrap`, `css` y `firebase`.
+La finalidad de este desarrollo es demostrar mi experiencia y conocimiento adquirido con React creando una app basica
+de compra de articulos electronicos siguiendo los pasos y desafios brindados por CoderHouse.
 
-### `npm run eject`
+Actualmente el proyecto se encuentra en la version 0.1.0, a pesar de las multiples entregas, cuenta con la minima navegabilidad para poder realizar el proceso
+de seleccionar uno o varios productos de distintas categorias, visualizar los productos a comprar en un carrito y proceder a la orden de compra de esos productos y
+donde el usuario coloca algunos datos personales, todo guardandolo en firebase.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![image](meApp.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- ## `Versiones`
+-`React`: ^17.0.2
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-`firebase`: ^8.7.1
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-`Bootstrap`: ^5.0.1
 
-## Learn More
+-`npm`: 7.13.0
+ -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## `Repositorio`
 
-### Analyzing the Bundle Size
+El repositorio que se usa actualmente es GitHub donde se encuentra la ultima versión actualizada con commits en el branch master. El proyecto es de caracter público por lo que puede ser clonado por cualquier usuario.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para ingresar al repositorio hace [Click Aquí](hhttps://github.com/AngelMagaquian/CoderHouse/tree/master/magaquianecommerce)
